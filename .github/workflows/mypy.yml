@@ -1,0 +1,12 @@
+on: [push, workflow_dispatch]
+
+name: mypy
+permissions:
+  contents: read
+jobs:
+  mypy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install mypy
+      - run: mypy .
